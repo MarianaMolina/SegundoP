@@ -3,15 +3,20 @@ package com.parcial.demo.domain;
 import java.util.List;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
-
+@Entity
+@Table (schema="public", name="cat_libro")
 public class Libro {
 
 	@Id
@@ -29,8 +34,9 @@ public class Libro {
 	@Column(name="s_autor")
 	private String autor;
 	
-	@OneToMany(mappedBy ="c_categoria", fetch = FetchType.EAGER)
-	private List<Categoria> categoria;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name="c_categoria")
+	private Categoria categoria;
 	
 	@Column(name="b_estado")
 	private Boolean estado;
@@ -78,13 +84,15 @@ public class Libro {
 			this.autor = autor;
 		}
 
-		public List<Categoria> getCategoria() {
+		public Categoria getCategoria() {
 			return categoria;
 		}
 
-		public void setCategoria(List<Categoria> categoria) {
+
+		public void setCategoria(Categoria categoria) {
 			this.categoria = categoria;
 		}
+
 
 		public Boolean getEstado() {
 			return estado;

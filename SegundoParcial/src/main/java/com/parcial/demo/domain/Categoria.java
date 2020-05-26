@@ -1,7 +1,11 @@
 package com.parcial.demo.domain;
 
+import java.util.List;
+
 import javax.persistence.Column;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.Size;
 
 public class Categoria {
@@ -15,6 +19,8 @@ public class Categoria {
 	@Column(name="s_categoria")
 	private String categoria;
 	
+	@OneToMany(mappedBy="cat_libro", fetch = FetchType.EAGER)
+	List <Libro> libros; 
 	//Constructor
 	public Categoria() {
 		
