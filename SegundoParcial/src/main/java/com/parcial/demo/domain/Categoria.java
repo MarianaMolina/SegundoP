@@ -10,7 +10,6 @@ import javax.validation.constraints.Size;
 
 public class Categoria {
 	
-	
 	@Id
 	@Column(name="c_categoria")
 	private Integer id_categoria;
@@ -20,7 +19,8 @@ public class Categoria {
 	private String categoria;
 	
 	@OneToMany(mappedBy="cat_libro", fetch = FetchType.EAGER)
-	List <Libro> libros; 
+	List <Libro> libros;
+	
 	//Constructor
 	public Categoria() {
 		
