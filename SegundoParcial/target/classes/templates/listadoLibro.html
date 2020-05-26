@@ -8,27 +8,26 @@
 	
 	<h1>LISTADO DE LIBROS</h1>
 	
-	<table>
+		<table>
 		<thead>
-			<tr>
-				<th>id libro</th>
-				<th>titulo</th>
-				<th>autor</th>
-				<th>categoria</th>
-				<th>estado</th>
-				<th>isbn</th>
-			</tr>
+			<th>Codigo</th>
+			<th>titulo</th>
+			<th>autor</th>
+			<th>categoria</th>
+			<th>Estado</th>
+			<th>isbn</th>
 		</thead>
-		<tbody>
-			<tr th:each="libro:${categoria.libro}">
-				<td th:text="${libro.id_libro}"></td>
-				<td th:text="${libro.titulo}"></td>
-				<td th:text="${libro.autor}"></td>
-				<td th:text="${libro.categoria}"></td>
-				<td th:text="${libro.estado}"></td>
-				<td th:text="${libro.isbn}"></td>
+		
+		<th:block th:each="l, row:${libro}">
+			<tr>
+				<th th:text="${l.id_libro}"/>
+				<th th:text="${l.titulo}"/>
+				<th th:text="${l.autor}"/>
+				<th th:text="${l.categoria}"/>
+				<th th:text="${l.estado}"/>
+				<th th:text="${l.isbn}"/>
 			</tr>
-		</tbody>
+		</th:block>
 	</table>
 	
 	<br>
