@@ -8,7 +8,7 @@
 	
 	<h1>Ingresar nuevo estudiante</h1>
 	
-	<form action="#" th:action="@{/saveBook}" th:object="${libro}" method="post">
+	<form action="#" th:action="@{/saveBook}" th:object="${Libro}" method="post">
 		<div>
 			<label for="titulo"><font color="#000000" face ="Arial" >Titulo: </font>  </label>
 			<input type="text" th:field="*{titulo}" id="titulo" required >
