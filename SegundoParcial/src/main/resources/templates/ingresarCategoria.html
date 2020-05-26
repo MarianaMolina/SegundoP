@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>ingresar Categoria</title>
+</head>
+<body>
+	
+	<h1>INGRESAR CATEGORIA</h1>
+	
+	<form action="#" th:action="@{/saveCategory}" th:object="${categoria}" method="post">
+		<div>
+			<label for="categoria"><font color="#000000" face ="Arial" >categoria: </font>  </label>
+			<input type="text" th:field="*{categoria}" id="categoria" required >
+			<span th:errors ="*{categoria}" style="color:#FF0000"></span>
+		</div>
+		<br>
+		<input type="submit" value="Guardar">  
+		
+	</form>
+
+</body>
+</html>

@@ -18,8 +18,8 @@ public class Categoria {
 	@Column(name="s_categoria")
 	private String categoria;
 	
-	@OneToMany(mappedBy="cat_libro", fetch = FetchType.EAGER)
-	List <Libro> libros;
+	@OneToMany(mappedBy="cat_categoria", fetch=FetchType.EAGER)
+	private List <Libro> libros;
 	
 	//Constructor
 	public Categoria() {

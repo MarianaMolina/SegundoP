@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>ingresar Libro</title>
+</head>
+<body>
+	
+	<h1>Ingresar nuevo estudiante</h1>
+	
+	<form action="#" th:action="@{/saveBook}" th:object="${libro}" method="post">
+		<div>
+			<label for="titulo"><font color="#000000" face ="Arial" >Titulo: </font>  </label>
+			<input type="text" th:field="*{titulo}" id="titulo" required >
+			<span th:errors ="*{titulo}" style="color:#FF0000"></span>
+		</div>
+		
+		<br>
+		
+		<div>
+			<label for="autor"> <font color="#000000" face ="Arial">Autor: </font>  </label>
+			<input type="text" th:field="*{autor}" id="autor" required >
+			<span th:errors ="*{autor}" style="color:#FF0000"></span>
+		</div>
+		
+		<br>
+		
+		<div>
+			<label for="categoria"> <font color="#000000" face ="Arial"> Categoria: </font>  </label>
+			<input type="text" th:field="*{categoria}" id="categoria" required>
+			<span th:errors ="*{categoria}" style="color:#FF0000"></span>
+		</div>
+		
+		<br>
+		
+		<div>
+			<label>Activo</label>
+			<input type="radio" th:field="*{estado}" th:value="${true}">
+			<label>Inactivo</label>
+			<input type="radio" th:field="*{estado}" th:value="${false}">
+	
+		</div>
+		
+		<br>
+		
+		<div>
+			<label for="isbn"> <font color="#000000" face ="Arial"> isbn: </font>  </label>
+			<input type="text" th:field="*{isbn}" id="isbn" required>
+			<span th:errors ="*{isbn}" style="color:#FF0000"></span>
+		</div>
+		
+		<input type="submit" value="Guardar">  
+		
+	</form>
+	
+
+</body>
+</html>
